@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Pulso Creativo</title>
+<meta name="description" content="Paquete completo de marketing: identidad de marca, página web y sistema de prospectos que llegan por WhatsApp. Pida su propuesta con Pulso Creativo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pulso Creativo | Paquete completo de marketing">
+<meta property="og:description" content="Identidad de marca, página web y sistema de prospectos por WhatsApp. Pida su propuesta.">
+<meta property="og:image" content="https://pulso-creativo.github.io/img/og.png">
+<meta property="og:url" content="https://pulso-creativo.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: cabecera limpia, portada en dos columnas (texto + panel negro con chevrones de la marca), franja negra de cifras, servicios, proceso, FAQ. */
+:root{
+  --bg:#FDFCFA; --ink:#1B2B44; --ink-soft:#42526b; --line:#E8E3DC; --card:#FFFFFF;
+  --red:#F03626; --red-deep:#C20F10; --orange:#EE7524; --gold:#FAAE1F; --yellow:#FFC200; --black:#0B0B0D;
+  --font:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:800;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,5.2vw,3.7rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+h3{font-size:1.2rem}
+p{margin:0}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--yellow);color:var(--ink);font-weight:800;font-size:1rem;text-decoration:none;padding:.95rem 1.6rem;border-radius:999px;border:0;cursor:pointer;font-family:inherit;transition:transform .15s,background .15s;min-height:48px}
+.btn:hover{background:var(--gold);transform:translateY(-1px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.ghost{background:transparent;border:2px solid var(--ink);padding:.85rem 1.5rem}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+
+/* Cabecera */
+header.top{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+header.top img{height:36px;width:auto}
+header.top .btn{padding:.6rem 1.2rem;font-size:.92rem;min-height:44px}
+
+/* Portada */
+.hero{padding-block:56px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .copy{min-width:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .lead{font-size:1.15rem;color:var(--ink-soft);max-width:34em}
+.hero .cta{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.micro{font-size:.88rem;color:var(--ink-soft)}
+.featured{background:var(--black);color:#fff;border-radius:24px;overflow:hidden;min-width:0}
+.stripe{height:12px;background:linear-gradient(90deg,var(--red) 0 25%,var(--red-deep) 25% 50%,var(--yellow) 50% 75%,var(--orange) 75%)}
+.featured .in{padding:28px 28px 26px;display:flex;flex-direction:column;gap:18px}
+.featured .k{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow)}
+.featured h2{font-size:1.35rem;color:#fff}
+.fn{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0}
+.fn div{display:flex;flex-direction:column-reverse;gap:2px}
+.fn dt{font-size:.78rem;color:#c9c9d1}
+.fn dd{margin:0;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--yellow);font-variant-numeric:tabular-nums;line-height:1.1}
+.featured .src{font-size:.78rem;color:#a9a9b3}
+
+/* Cifras */
+.stats{background:var(--black);color:#fff;padding-block:64px}
+.stats .head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:40px}
+.stats .eyebrow{color:var(--yellow)}
+.stats ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr)}
+.stats li{padding:8px 20px;border-left:1px solid #2b2b31;display:flex;flex-direction:column;gap:6px}
+.stats li:first-child{border-left:0;padding-left:0}
+.stats b{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:800;color:var(--yellow);line-height:1;font-variant-numeric:tabular-nums}
+.stats span{font-size:.92rem;color:#d8d8de}
+.stats .foot{margin-top:30px;font-size:.82rem;color:#a9a9b3;max-width:62ch}
+
+/* Bandas de llamado a la acción */
+.cta-band{padding-block:56px;background:var(--yellow)}
+.cta-band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cta-band .t{display:flex;flex-direction:column;gap:8px;max-width:640px}
+.cta-band h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+.cta-band .act{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.cta-band .btn{background:var(--ink);color:#fff}
+.cta-band .btn:hover{background:#0f1a2c}
+.cta-band .micro{color:var(--ink)}
+.cta-plain{padding-block:44px;background:var(--bg);border-block:1px solid var(--line)}
+.cta-plain .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.cta-plain p.q{font-weight:800;font-size:1.25rem;max-width:30ch;line-height:1.3}
+.cta-plain .act{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+
+/* Secciones */
+section.block{padding-block:84px}
+.sec-head{display:flex;flex-direction:column;gap:12px;max-width:700px;margin-bottom:44px}
+.sec-head p{color:var(--ink-soft)}
+
+/* Problema */
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.pain ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.pain li{display:flex;gap:14px;align-items:flex-start;font-size:1.05rem}
+.pain li b{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;font-weight:800;color:#fff;background:var(--orange)}
+.pain .yes b{background:var(--ink)}
+.pain h3{margin-bottom:16px}
+
+/* Método */
+.method{background:#fff;border-block:1px solid var(--line)}
+.pillars{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:p}
+.pillars li{counter-increment:p;border:1px solid var(--line);border-radius:18px;padding:22px 18px;display:flex;flex-direction:column;gap:8px;background:var(--bg);min-width:0}
+.pillars li::before{content:counter(p);width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;display:grid;place-items:center}
+.pillars h3{font-size:1.12rem}
+.pillars p{font-size:1rem;color:var(--ink-soft);line-height:1.5}
+.weeks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.weeks li{padding-top:14px;border-top:4px solid var(--orange);display:flex;flex-direction:column;gap:6px;min-width:0}
+.weeks .when{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-deep)}
+.weeks p{font-size:1rem;color:var(--ink-soft)}
+.sub{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px}
+
+/* Casos */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.case .tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red-deep)}
+.case h3{font-size:1.08rem}
+.case .roas{display:flex;align-items:baseline;gap:8px}
+.case .roas b{font-size:2.4rem;font-weight:800;line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.case .roas span{font-size:.85rem;color:var(--ink-soft);font-weight:600}
+.case dl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0;padding-top:14px;border-top:1px solid var(--line)}
+.case dl div{display:flex;flex-direction:column-reverse;gap:0}
+.case dt{font-size:.88rem;color:var(--ink-soft)}
+.case dd{margin:0;font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums}
+.case .days{font-size:.95rem;color:var(--ink-soft)}
+.casenote{margin-top:22px;font-size:.84rem;color:var(--ink-soft);max-width:70ch}
+
+/* Demostración */
+.demo{background:var(--black);color:#fff;padding-block:84px}
+.demo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.demo .eyebrow{color:var(--yellow)}
+.demo ul{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.demo li{padding-left:28px;position:relative;color:#e6e6ec}
+.demo li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;background:var(--yellow);clip-path:polygon(0 0,50% 0,100% 50%,50% 100%,0 100%,50% 50%)}
+.demo .box{background:var(--yellow);color:var(--ink);border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.demo .box h3{font-size:1.5rem}
+.demo .box .btn{background:var(--ink);color:#fff;width:100%}
+.demo .box .btn:hover{background:#0f1a2c}
+.demo .box .micro{color:var(--ink)}
+
+
+/* Evidencia (capturas difuminadas) */
+/* Embudo ilustrativo */
+.flow{margin:0 0 48px;padding:26px 26px 22px;background:var(--bg);border:1px solid var(--line);border-radius:20px;max-width:760px}
+.flow .row{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.flow .lab{font-weight:700;font-size:.98rem}
+.flow .line{display:flex;align-items:center;gap:12px}
+.flow .bar{height:30px;border-radius:6px;min-width:8px}
+.flow b{font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums}
+.flow .note{font-size:.88rem;color:var(--ink-soft);margin-top:4px}
+/* Selector de nicho */
+.chips{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.chips legend{font-weight:700;font-size:.95rem;padding:0;margin-bottom:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chips span{display:inline-block;padding:.55rem 1rem;border:2px solid var(--ink);border-radius:999px;font-weight:700;font-size:.92rem;background:#fff;color:var(--ink)}
+.chips input:checked+span{background:var(--ink);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--orange);outline-offset:2px}
+/* Calificación */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fit>div{border-radius:20px;padding:28px 26px;min-width:0}
+.fit .yes{background:#fff;border:2px solid var(--ink)}
+.fit .no{background:#fff;border:1px solid var(--line)}
+.fit h3{margin-bottom:14px}
+.fit ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:1rem}
+.fit li{padding-left:24px;position:relative}
+.fit .yes li::before{content:"\2713";position:absolute;left:0;font-weight:800;color:var(--ink)}
+.fit .no li::before{content:"\2715";position:absolute;left:0;font-weight:800;color:var(--red-deep)}
+
+/* FAQ */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;list-style:none;font-weight:700;font-size:1.05rem;padding:18px 40px 18px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:1.6rem;font-weight:500;color:var(--red-deep)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 40px 20px 0;color:var(--ink-soft)}
+
+/* Cierre */
+.closing{background:var(--yellow);padding-block:72px}
+.closing .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.closing h2{max-width:20ch}
+.closing p{margin-top:10px;max-width:44ch}
+.closing .btn{background:var(--ink);color:#fff}
+.closing .btn:hover{background:#0f1a2c}
+
+footer{background:var(--black);color:#cfcfd6;padding-block:44px;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+footer img{height:34px;width:auto}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{text-decoration:none;color:#e8e8ee}
+footer a:hover{text-decoration:underline}
+
+/* Barra fija móvil */
+.wa-bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--bg);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+.wa-bar .btn{width:100%}
+
+/* Pop-up de oferta */
+.pop{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(11,11,13,.62)}
+.pop[hidden]{display:none}
+.pop .card{position:relative;background:var(--bg);color:var(--ink);border-radius:24px;max-width:460px;width:100%;padding:36px 30px 30px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;border-top:8px solid var(--orange);max-height:calc(100dvh - 40px);overflow:auto}
+.pop h2{font-size:1.7rem}
+.pop p{color:var(--ink-soft)}
+.pop .x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;border-radius:50%;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--ink)}
+.pop .x:hover{background:var(--line)}
+.pop .skip{background:none;border:0;font:inherit;font-size:.9rem;color:var(--ink-soft);text-decoration:underline;cursor:pointer;padding:6px 0}
+
+@media (max-width:980px){
+  .hero .wrap,.pain,.demo .wrap,.fit{grid-template-columns:1fr;gap:32px}
+  .stats ul{grid-template-columns:repeat(3,1fr);row-gap:28px}
+  .stats li:nth-child(4){border-left:0;padding-left:0}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .weeks{grid-template-columns:repeat(2,1fr)}
+  .cases,}
+@media (max-width:620px){
+  body{font-size:16px}
+  .hero{padding-block:36px 44px}
+  .hero .cta .btn,.cta-band .btn,.cta-plain .btn{width:100%}
+  .cta-band .act,.cta-plain .act,.hero .cta{align-items:stretch;width:100%}
+  .stats ul{grid-template-columns:repeat(2,1fr)}
+  .stats li{padding:8px 14px}
+  .stats li:nth-child(odd){border-left:0;padding-left:0}
+  .stats li:nth-child(4){border-left:1px solid #2b2b31;padding-left:14px}
+  section.block,.demo{padding-block:56px}
+  .pillars,.weeks,.cases,  .fn{grid-template-columns:repeat(2,1fr)}
+  .closing .btn{width:100%}
+  header.top .btn{display:none}
+}
+@media (min-width:769px){.wa-bar{display:none}body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<!-- DATOS Y SUPUESTOS (Ficha maestra):
+  - WhatsApp corporativo +1 423 719 8001, confirmado por el titular.
+  - Cifras globales (+27 nichos, +140k leads, 290% ROI, 5 países, +70 empresas): Portafolio Lead Machine oficial, autorizadas por el titular. Son datos de 2023.
+  - Casos: tomados de los portafolios de Inmobiliarias y Seguros (campañas 2023), anónimos por sector, sin montos (la moneda varía según el negocio).
+  - >30% de cierre y >75% de asistencia: afirmaciones del portafolio, sin evidencia adjunta.
+  - Oferta: demostración gratuita de la estrategia (30 min), tomada del portafolio.
+  - SUPUESTO: bloque "Para quién no es" y requisito de presupuesto de anuncios.
+  - Sin precios, sin logos de terceros, sin mención religiosa, sin servicio de branding.
+  - privacidad.html y terminos.html: borrador pendiente de revisión legal.
+-->
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" aria-label="Pulso Creativo, inicio"><img src="img/logo.png" alt="Pulso Creativo" width="166" height="36"></a>
+    <a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener">Agendar mi demostración</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Lead Machine · Sistema de prospectos</p>
+      <h1>Llene su agenda de citas con <em>prospectos calificados</em>, sin depender de seguidores.</h1>
+      <p class="lead">Atraemos, calificamos y damos seguimiento a personas con intención real de comprar, y se las entregamos por WhatsApp listas para agendar. Para negocios de servicios que venden por cita o cotización.</p>
+      <div class="cta">
+        <a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20" style="flex:none"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.9c0-3.2-1.2-6.1-3.5-8.4zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.1C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.4 9.7-9.8 9.7zm5.3-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg> Agendar mi demostración gratis</a>
+        <p class="micro">30 minutos · Sin compromiso · Un solo cliente por nicho y ciudad</p>
+      </div>
+    </div>
+    <aside class="featured" aria-label="Caso real de seguros">
+      <div class="stripe" aria-hidden="true"></div>
+      <div class="in">
+        <p class="k">Caso real · Seguros</p>
+        <h2>Gastos médicos y ahorro: 30 días de campaña</h2>
+        <dl class="fn">
+          <div><dt>Leads</dt><dd>93</dd></div>
+          <div><dt>Citas</dt><dd>38</dd></div>
+          <div><dt>Ventas</dt><dd>14</dd></div>
+          <div><dt>ROAS</dt><dd>5,57</dd></div>
+        </dl>
+        <p class="src">Campaña de un asesor de seguros. Cada negocio es distinto.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="stats" id="resultados">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Resultados</p>
+      <h2>Campañas en distintos nichos y países.</h2>
+    </div>
+    <ul>
+      <li><b>+27</b><span>nichos trabajados</span></li>
+      <li><b>+140k</b><span>leads generados</span></li>
+      <li><b>290%</b><span>ROI promedio</span></li>
+      <li><b>5</b><span>países en Latinoamérica</span></li>
+      <li><b>+70</b><span>empresas aplican nuestra metodología</span></li>
+    </ul>
+    <p class="foot">Cifras del portafolio de Pulso Creativo. Cada negocio, oferta y presupuesto es distinto, por eso no prometemos el mismo resultado a todos.</p>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Agendar demostración">
+  <div class="wrap">
+    <div class="t">
+      <h2>¿Quiere estos números en su negocio?</h2>
+      <p>Le mostramos en 30 minutos cómo aplicaríamos el sistema a su nicho. Gratis y sin compromiso.</p>
+    </div>
+    <div class="act">
+      <a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20" style="flex:none"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.9c0-3.2-1.2-6.1-3.5-8.4zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.1C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.4 9.7-9.8 9.7zm5.3-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg> Agendar mi demostración gratis</a>
+      <p class="micro">Respuesta por WhatsApp</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="problema">
+  <div class="wrap pain">
+    <div class="sec-head" style="margin-bottom:0">
+      <p class="eyebrow">El problema</p>
+      <h2>Generar leads no basta si no se vuelven citas.</h2>
+      <p>Muchos anuncios traen curiosos que nunca contestan. Por eso el sistema califica a cada prospecto antes de llegar a su agenda y le da seguimiento hasta la cita.</p>
+    </div>
+    <div>
+      <h3>Con Lead Machine usted no necesita:</h3>
+      <ul>
+        <li><b>&times;</b><span>Tener miles de seguidores.</span></li>
+        <li><b>&times;</b><span>Esperar meses para ver resultados.</span></li>
+        <li><b>&times;</b><span>Invertir miles de dólares antes de saber si funciona.</span></li>
+        <li><b>&times;</b><span>Perseguir prospectos que no contestan.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block method" id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">El método</p>
+      <h2>Un sistema completo, no solo anuncios.</h2>
+      <p>Cinco piezas conectadas llevan al prospecto desde el primer anuncio hasta la cita con usted.</p>
+    </div>
+    <ol class="pillars">
+      <li><h3>Estrategia de anuncios</h3><p>Diagnóstico de su mercado y creativos de imagen y video con copywriting.</p></li>
+      <li><h3>Embudo de captación</h3><p>Campaña en Business Manager con formularios pensados para captar intención real.</p></li>
+      <li><h3>Calificación automática</h3><p>Preguntas que filtran presupuesto, interés y perfil antes de que llegue a usted.</p></li>
+      <li><h3>Secuencias de seguimiento</h3><p>Mensajes de seguimiento para que ningún prospecto se enfríe.</p></li>
+      <li><h3>Cierre y asistencia</h3><p>Estrategia para que el prospecto llegue a la cita y avance al cierre.</p></li>
+    </ol>
+    <figure class="flow" aria-label="Ejemplo ilustrativo del flujo de prospectos a clientes">
+      <p class="sub" style="margin-bottom:14px">Ejemplo ilustrativo del flujo</p>
+      <div class="row"><span class="lab">Prospectos calificados</span><div class="line"><div class="bar" style="width:100%;background:var(--red)"></div><b>100</b></div></div>
+      <div class="row"><span class="lab">Citas agendadas</span><div class="line"><div class="bar" style="width:30%;background:var(--orange)"></div><b>30</b></div></div>
+      <div class="row"><span class="lab">Clientes nuevos</span><div class="line"><div class="bar" style="width:9%;background:var(--yellow)"></div><b>9</b></div></div>
+      <p class="note">Ilustración basada en el rango de nuestros casos de seguros. Cada nicho es distinto y no es una promesa de resultado.</p>
+    </figure>
+    <p class="sub">Así se ejecuta en 5 semanas (30 días)</p>
+    <ol class="weeks">
+      <li><span class="when">Semana 1</span><h3>Diagnóstico y estrategia</h3><p>Conocemos su negocio y armamos el plan a su medida.</p></li>
+      <li><span class="when">Semana 2</span><h3>Producción y lanzamiento</h3><p>Creamos los anuncios y lanzamos la campaña.</p></li>
+      <li><span class="when">Semanas 3 y 4</span><h3>Optimización constante</h3><p>Análisis y ajustes diarios para mejorar resultados.</p></li>
+      <li><span class="when">Semana 5</span><h3>Continuidad</h3><p>Presentamos resultados y la estrategia del mes siguiente.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-plain" aria-label="Agendar demostración">
+  <div class="wrap">
+    <p class="q">Vea cómo se vería este sistema en su nicho.</p>
+    <div class="act">
+      <a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20" style="flex:none"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.9c0-3.2-1.2-6.1-3.5-8.4zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.1C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.4 9.7-9.8 9.7zm5.3-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg> Agendar mi demostración gratis</a>
+      <p class="micro">30 minutos · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="casos">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Casos reales</p>
+      <h2>Seis campañas, de 30 a 40 días cada una.</h2>
+      <p>Resultados de campañas de inmobiliarias y asesores de seguros. Mostramos el embudo completo: leads, citas, ventas y retorno sobre la inversión publicitaria (ROAS).</p>
+    </div>
+    <div class="cases">
+      <article class="case"><p class="tag">Inmobiliaria</p><h3>Preventa de vivienda residencial</h3><div class="roas"><b>21,03</b><span>ROAS</span></div><dl><div><dt>Leads</dt><dd>236</dd></div><div><dt>Citas</dt><dd>24</dd></div><div><dt>Ventas</dt><dd>2</dd></div></dl><p class="days">Campaña de 34 días</p></article>
+      <article class="case"><p class="tag">Inmobiliaria</p><h3>Terrenos en preventa</h3><div class="roas"><b>16,75</b><span>ROAS</span></div><dl><div><dt>Leads</dt><dd>214</dd></div><div><dt>Citas</dt><dd>24</dd></div><div><dt>Ventas</dt><dd>3</dd></div></dl><p class="days">Campaña de 40 días</p></article>
+      <article class="case"><p class="tag">Seguros</p><h3>Gastos médicos mayores</h3><div class="roas"><b>5,19</b><span>ROAS</span></div><dl><div><dt>Leads</dt><dd>134</dd></div><div><dt>Citas</dt><dd>40</dd></div><div><dt>Ventas</dt><dd>12</dd></div></dl><p class="days">Campaña de 30 días</p></article>
+      <article class="case"><p class="tag">Seguros</p><h3>Plan personal de retiro</h3><div class="roas"><b>5,79</b><span>ROAS</span></div><dl><div><dt>Leads</dt><dd>80</dd></div><div><dt>Citas</dt><dd>24</dd></div><div><dt>Ventas</dt><dd>5</dd></div></dl><p class="days">Campaña de 35 días</p></article>
+      <article class="case"><p class="tag">Seguros</p><h3>Gastos médicos, promotoría</h3><div class="roas"><b>5,01</b><span>ROAS</span></div><dl><div><dt>Leads</dt><dd>86</dd></div><div><dt>Citas</dt><dd>30</dd></div><div><dt>Ventas</dt><dd>10</dd></div></dl><p class="days">Campaña de 37 días</p></article>
+      <article class="case"><p class="tag">Seguros</p><h3>Seguro de ahorro y gastos médicos</h3><div class="roas"><b>5,57</b><span>ROAS</span></div><dl><div><dt>Leads</dt><dd>93</dd></div><div><dt>Citas</dt><dd>38</dd></div><div><dt>Ventas</dt><dd>14</dd></div></dl><p class="days">Campaña de 30 días</p></article>
+    </div>
+    <p class="casenote">ROAS es lo que se factura por cada unidad invertida en anuncios (5 significa cinco veces) y el ROI promedio es la ganancia sobre la inversión, promediada entre nichos. Las campañas son de clientes de Pulso Creativo y se presentan sin nombres. Los resultados de cada negocio dependen de su oferta, su mercado y su presupuesto.</p>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Agendar demostración">
+  <div class="wrap">
+    <div class="t">
+      <h2>Cada mes sin prospectos es una agenda vacía.</h2>
+      <p>Trabajamos con un solo cliente por nicho y ciudad, y los cupos son limitados. Consulte si su zona sigue disponible.</p>
+    </div>
+    <div class="act">
+      <a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20" style="flex:none"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.9c0-3.2-1.2-6.1-3.5-8.4zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.1C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.4 9.7-9.8 9.7zm5.3-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg> Agendar mi demostración gratis</a>
+      <p class="micro">Cupo limitado por nicho y ciudad</p>
+    </div>
+  </div>
+</section>
+
+<section class="demo" id="demostracion">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">La demostración gratuita</p>
+      <h2>Qué verá en 30 minutos.</h2>
+      <ul>
+        <li>Nuestra estrategia de anuncios aplicada a su nicho</li>
+        <li>El embudo de captación de prospectos, paso a paso</li>
+        <li>Cómo funciona la calificación automática</li>
+        <li>Las secuencias de seguimiento que evitan que el prospecto se enfríe</li>
+        <li>La estrategia de cierre y de asistencia a citas</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Agende por WhatsApp y comenzamos a trabajar en su estrategia.</h3>
+      <fieldset class="chips" id="niche">
+        <legend>¿A qué se dedica? (opcional)</legend>
+        <label><input type="radio" name="niche" value="bienes raíces"><span>Bienes raíces</span></label>
+        <label><input type="radio" name="niche" value="seguros"><span>Seguros</span></label>
+        <label><input type="radio" name="niche" value="asesoría fiscal o legal"><span>Fiscal o legal</span></label>
+        <label><input type="radio" name="niche" value="servicios profesionales"><span>Servicios profesionales</span></label>
+        <label><input type="radio" name="niche" value="otro servicio"><span>Otro servicio</span></label>
+      </fieldset>
+      <a class="btn wa" id="demo-cta" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20" style="flex:none"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.9c0-3.2-1.2-6.1-3.5-8.4zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.1C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.4 9.7-9.8 9.7zm5.3-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg> Agendar mi demostración gratis</a>
+      <p class="micro">+1 423 719 8001 · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="para-quien">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Para quién es</p>
+      <h2>Funciona mejor en negocios de servicios que venden por cita.</h2>
+      <p>Trabajamos con inmobiliarias, seguros, asesoría fiscal y legal, servicios profesionales y empresas de servicios. Así sabrá si encaja.</p>
+    </div>
+    <div class="fit">
+      <div class="yes">
+        <h3>Es para usted si</h3>
+        <ul>
+          <li>Vende un servicio que se cierra en una cita, llamada o cotización.</li>
+          <li>Puede atender a los prospectos que lleguen.</li>
+          <li>Cuenta con presupuesto para anuncios y quiere resultados medibles.</li>
+          <li>Hoy depende de referidos o de redes que no traen clientes.</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>No es para usted si</h3>
+        <ul>
+          <li>Busca seguidores o "me gusta" en lugar de clientes.</li>
+          <li>Espera ventas inmediatas sin dar seguimiento a los prospectos.</li>
+          <li>Necesita manejo mensual de sus redes sociales.</li>
+          <li>No cuenta con presupuesto para anuncios.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block faq-sec" id="preguntas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Lo que más nos preguntan.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Qué es Lead Machine?</summary><p>Es un sistema para atraer, captar y convertir prospectos de forma organizada: diagnóstico, creativos, campaña digital, optimización diaria y estrategia de continuidad, siguiendo un calendario de actividades.</p></details>
+      <details><summary>¿Cuánto tarda en funcionar?</summary><p>Se ejecuta en 5 semanas (30 días). La campaña se lanza en la semana 2 y se optimiza a diario durante las semanas 3 y 4.</p></details>
+      <details><summary>¿Qué incluye?</summary><p>Diagnóstico y análisis de mercado, creativos de imagen y video con copywriting, campaña construida en Business Manager, optimización continua y la estrategia del mes siguiente con presentación de resultados.</p></details>
+      <details><summary>¿Cuánto cuesta?</summary><p>Depende de su nicho y alcance. En la demostración gratuita revisamos su caso y le enviamos una propuesta con valor y alcance claros.</p></details>
+      <details><summary>¿Garantizan resultados?</summary><p>Mostramos resultados reales de campañas anteriores, no promesas. El resultado depende de su oferta, su mercado y su presupuesto, y por eso medimos y ajustamos la campaña todos los días.</p></details>
+      <details><summary>¿Quién maneja la inversión en anuncios?</summary><p>El presupuesto de anuncios se define con usted en el diagnóstico inicial. Nosotros construimos la campaña, la lanzamos y la optimizamos.</p></details>
+      <details><summary>¿Necesito tener seguidores en redes sociales?</summary><p>No. El sistema trae prospectos directamente desde los anuncios, sin depender de su número de seguidores.</p></details>
+      <details><summary>¿Trabajan con mi tipo de negocio?</summary><p>Hemos trabajado en más de 27 nichos de servicios. Cuéntenos el suyo por WhatsApp y le decimos con honestidad si podemos ayudarle.</p></details>
+      <details><summary>¿Qué pasa en la demostración gratuita?</summary><p>Son 30 minutos por videollamada o WhatsApp. Vemos su negocio, le mostramos la estrategia aplicada a su nicho y decidimos juntos si tiene sentido trabajar.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div>
+      <h2>Agende hoy su demostración gratuita.</h2>
+      <p>30 minutos para ver cómo llenar su agenda de citas con prospectos calificados. Un solo cliente por nicho y ciudad.</p>
+    </div>
+    <a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20" style="flex:none"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.9c0-3.2-1.2-6.1-3.5-8.4zM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.1C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.4 9.7-9.8 9.7zm5.3-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg> Agendar mi demostración gratis</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-blanco.png" alt="Pulso Creativo" width="155" height="34">
+    <nav aria-label="Legal y contacto">
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <span>WhatsApp: +1 423 719 8001</span>
+    </nav>
+  </div>
+</footer>
+
+<div class="wa-bar"><a class="btn wa" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20agendar%20mi%20demostraci%C3%B3n%20gratis%20de%20Lead%20Machine." target="_blank" rel="noopener">Agendar mi demostración gratis</a></div>
+
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="pop-t" hidden>
+  <div class="card">
+    <button class="x" id="pop-x" aria-label="Cerrar">&times;</button>
+    <p class="eyebrow">Demostración gratuita</p>
+    <h2 id="pop-t">Vea la estrategia que llena agendas</h2>
+    <p>30 minutos para ver cómo aplicaríamos Lead Machine a su negocio. Sin compromiso.</p>
+    <a class="btn wa" id="pop-cta" href="https://wa.me/14237198001?text=Hola%2C%20quiero%20la%20demostraci%C3%B3n%20gratuita%20de%20Lead%20Machine." target="_blank" rel="noopener">Agendar mi demostración gratis</a>
+    <button class="skip" id="pop-skip" type="button">Ahora no</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pop=document.getElementById('pop'),last=null,KEY='pc_pop';
+  function seen(){try{return sessionStorage.getItem(KEY)==='1'}catch(e){return false}}
+  function mark(){try{sessionStorage.setItem(KEY,'1')}catch(e){}}
+  function open(){if(seen())return;last=document.activeElement;pop.hidden=false;mark();document.getElementById('pop-x').focus()}
+  function close(){pop.hidden=true;if(last&&last.focus)last.focus()}
+  function isPhone(){try{return Math.min(screen.width,screen.height)<600||window.matchMedia('(max-width:767px)').matches}catch(e){return false}}
+  if(!isPhone())setTimeout(open,6000);
+  var cta=document.getElementById('demo-cta'),base=cta.getAttribute('href').split('?text=')[0];
+  document.getElementById('niche').addEventListener('change',function(e){
+    var v=e.target.value;if(!v)return;
+    cta.setAttribute('href',base+'?text='+encodeURIComponent('Hola, mi negocio es de '+v+' y quiero agendar mi demostración gratis de Lead Machine.'));
+  });
+  document.getElementById('pop-x').addEventListener('click',close);
+  document.getElementById('pop-skip').addEventListener('click',close);
+  document.getElementById('pop-cta').addEventListener('click',function(){mark();pop.hidden=true});
+  pop.addEventListener('click',function(e){if(e.target===pop)close()});
+  document.addEventListener('keydown',function(e){
+    if(pop.hidden)return;
+    if(e.key==='Escape')close();
+    if(e.key==='Tab'){var f=pop.querySelectorAll('button,a[href]');var a=f[0],b=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();b.focus()}
+      else if(!e.shiftKey&&document.activeElement===b){e.preventDefault();a.focus()}}
+  });
+})();
+</script>
+</body>
+</html>
